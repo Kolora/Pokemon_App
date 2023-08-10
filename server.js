@@ -5,7 +5,6 @@ const pokemon = require(":/models/pokemon");
 const app = express();
 
 const PORT = 3000;
-
 // Load the create engine function
 const jsxEngine = require("jsx-view-engine");
 
