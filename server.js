@@ -1,15 +1,13 @@
 const express = require("express");
 
-const pokemon = require(":/models/pokemon");
+const pokemon = require("./models/pokemon");
 
 const app = express();
 
 const PORT = 3000;
+
 // Load the create engine function
 const jsxEngine = require("jsx-view-engine");
-
-// // Load the method override function
-// const methodOverride = require('method-override')
 
 // Configure the view engine and look for files ending in jsx
 app.set("view engine", "jsx");
@@ -18,20 +16,18 @@ app.set("view engine", "jsx");
 app.engine("jsx", jsxEngine());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Pokemon App!");
+  // console.log(pokemon)
+  res.send("Welcome to the pokemon app");
 });
-
-// app.get("/pokemon", (req, res)=>{
-//     res.send(pokemon)
-// })
 
 app.get("/pokemon", (req, res) => {
-  res.render("Index", { pokemon });
+  res.render("Index", { pokemon: pokemon });
 });
 
-app.get('/pokemon/:id', (req, res)=>
-)
+app.get("/pokemon/:id", (req, res) => {
+  res.send(req.params.id);
+});
 
 app.listen(PORT, () => {
-  console.log(`listening on port:${PORT}`);
+  console.log(`Listening at port: ${PORT}`);
 });

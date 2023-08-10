@@ -1,27 +1,23 @@
-// //   class MyFirstComponent extends React.Component() {
-// //   return (
-// //     <div style={myStyle}>My First React Component!</div>;
-// //   }
-// //   }
+import React from "react";
 
-// import React from "react";
+const myStyle = {
+  color: "#ffffff",
+  backgroundColor: "#000000",
+};
 
-// const myStyle = {
-//   color: "#ffffff",
-//   backgroundColor: "#000000",
-// };
-
-// export default function Index() {
-//   return (
-//     <div style={myStyle}>
-//       <h1>See all the pokemon!</h1>
-//       <ul>
-//         {pokemon.map((poke, index) => (
-//           <li>
-//             a href={"/${index}"}>{poke.name[0].toUppercase().poke.name.slice(1)}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
+export default function Index({ pokemon }) {
+  return (
+    <div style={myStyle}>
+      <h1>See all the pokemon!</h1>
+      <ul>
+        {pokemon.map((poke, index) => (
+          <li>
+            <a href={`/pokemon/${index}`}>
+              {poke.name[0].toUpperCase() + poke.name.slice(1)}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
