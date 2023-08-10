@@ -8,4 +8,4 @@ const pokemon = [
   {name: "wartortle", img: "http://img.pokemondb.net/artwork/wartortle"}
  ];
 
- export de
+ module.exports = pokemon
